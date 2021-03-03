@@ -52,6 +52,18 @@ Route::get('examples',function(Request $request){
     return view('examples')->with('users', $users);
 });
 
+
+Route::get('viewusers', function() {
+    $users = App\Models\User::all();
+    return view('viewusers')->with('users', $users);
+});
+route::get('examples_2',function(){
+return view('examples_2');
+
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
